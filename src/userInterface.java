@@ -1,5 +1,5 @@
 
-public class mainMenu {
+public class userInterface {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
