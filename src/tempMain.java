@@ -9,11 +9,19 @@ import java.util.LinkedList;
  */
 public class tempMain {
 
-	LinkedList<specWarehouse> Warehouses = new LinkedList();
+	
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		LinkedList<specWarehouse> Warehouses = new LinkedList();
+		specWarehouse warehouse = new specWarehouse("1", "Warehouse 1");
+		Warehouses.add(warehouse);
+		invItem item1 = new invItem("Item 1", "Item 1 Description", 10.0, 5);
+		invItem item2 = new invItem("Item 2", "Item 2 Description", 15.0, 8);
+		warehouse.inv.add(item1);
+		warehouse.inv.add(item2);
+		System.out.println(warehouse.inv.get(1).toString());
+		
 	}
 
 }

@@ -7,16 +7,16 @@
  */
 public class invItem {
 	//ID, name, description, price, and quantity.
-	int ID;
-	String name, desc;
-	double price;
-	int quantity;
+	private int ID;
+	private String name, desc;
+	private double price;
+	private int quantity;
 	
 	public invItem(String name, String desc, double price, int quantity) {//Constructor Method
-		name =this.name;
-		desc=this.desc;
-		price=this.price;
-		quantity=this.quantity;
+		this.name = name;
+		this.desc = desc;
+		this.price = price;
+		this.quantity = quantity;
 	}
 	//getter/setters
 	public int getID() {return ID;}

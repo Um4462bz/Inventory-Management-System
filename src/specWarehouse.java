@@ -9,18 +9,23 @@ import java.util.LinkedList;
  */
 //warehouse ID, name, location
 public class specWarehouse {
-	private int id;
+	private String id;
 	private String name;
 	
 	LinkedList<invItem> inv = new LinkedList();
 	
-	public specWarehouse(int id, String name) {//need input of product list, can input a null list which will then be accessed and modified after creation
-		id=this.id;
-		name=this.name;	
+	public specWarehouse(String id, String name) {//need input of product list, can input a null list which will then be accessed and modified after creation
+		this.id = id;
+	    this.name = name;;	
 	}
 	//getter/setters - need maybe a get/set for the list once implemented
-	public int getId() {return id;}
-	public void setId(int id) {this.id = id;}
+	public void setInventoryList(LinkedList<invItem> inventoryList) {this.inv = inventoryList;}
+	//public int getId() {return id;}
+	//public void setId(int id) {this.id = id;}
 	public String getName() {return name;}
 	public void setName(String name) {this.name = name;}
+	@Override
+	public String toString() {
+		return "ID: " + id + ", Name: " + name;
+	}
 }
