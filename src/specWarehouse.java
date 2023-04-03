@@ -1,3 +1,5 @@
+import java.util.LinkedList;
+
 /*
  * This information system is popular in multiple businesses, where we need to control product inventory stocking and purchasing.
  *  In this project, you will manage various products and warehouses. Each warehouse will stock a different set of products. You 
@@ -8,20 +10,17 @@
 //warehouse ID, name, location
 public class specWarehouse {
 	private int id;
-	private String name,loc;
+	private String name;
 	
+	LinkedList<invItem> inv = new LinkedList();
 	
-	public specWarehouse(int id, String name, String loc) {//need input of product list, can input a null list which will then be accessed and modified after creation
+	public specWarehouse(int id, String name) {//need input of product list, can input a null list which will then be accessed and modified after creation
 		id=this.id;
-		name=this.name;
-		loc=this.loc;
+		name=this.name;	
 	}
 	//getter/setters - need maybe a get/set for the list once implemented
 	public int getId() {return id;}
 	public void setId(int id) {this.id = id;}
 	public String getName() {return name;}
 	public void setName(String name) {this.name = name;}
-	public String getLoc() {return loc;}
-	public void setLoc(String loc) {this.loc = loc;}
-	
 }
