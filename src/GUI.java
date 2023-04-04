@@ -14,6 +14,8 @@ import javax.swing.JTextArea;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
 
 public class GUI extends JFrame {
 
@@ -29,6 +31,8 @@ public class GUI extends JFrame {
 	private JButton btnAddWarehouse;
 	private JTextArea NewWareTXTarea;
 	private JComboBox comboBox;
+	private JLabel lblNewLabel;
+	private JButton btnNewButton;
 
 	/**
 	 * Launch the application.
@@ -104,17 +108,32 @@ public class GUI extends JFrame {
 		
 		manPanel = new JPanel();
 		tabbedPane.addTab("Manage Warehouse", null, manPanel, null);
+		manPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		
+		lblNewLabel = new JLabel("Select Warehouse to Modify:");
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		manPanel.add(lblNewLabel);
 		
 		//String[] itemsArray = items.toArray(new String[items.size()]);
 		comboBox = new JComboBox();
+		comboBox.setMinimumSize(new Dimension(55, 22));
 		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		manPanel.add(comboBox);
+		
+		btnNewButton = new JButton("Pull Warehouse");
+		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		manPanel.add(btnNewButton);
+		for (specWarehouse warehouse : Warehouses) {
+			comboBox.addItem(warehouse.getName());
+		}
+
 	}
 
 	protected void btnAddWarehouseClicked() {
 		
 		specWarehouse warehouse = new specWarehouse(txtID.getText(),txtWName.getText());
 		NewWareTXTarea.append("Added Warehouse:"+warehouse.toString());
+		comboBox.addItem(warehouse.getName());
 		
 	}
 }
