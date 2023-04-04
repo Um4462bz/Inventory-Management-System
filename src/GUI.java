@@ -113,8 +113,8 @@ public class GUI extends JFrame {
 
 	protected void btnAddWarehouseClicked() {
 		
-		specWarehouse w = new specWarehouse(txtID.getText(),txtWName.getText());
-		NewWareTXTarea.append("Added Warehouse:"+w.toString());
+		specWarehouse warehouse = new specWarehouse(txtID.getText(),txtWName.getText());
+		NewWareTXTarea.append("Added Warehouse:"+warehouse.toString());
 		
 	}
 }

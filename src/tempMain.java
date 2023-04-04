@@ -8,8 +8,6 @@ import java.util.LinkedList;
  *  If the product order is approved, the inventory of those ordered products is updated.
  */
 public class tempMain {
-
-	
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -21,7 +19,8 @@ public class tempMain {
 		warehouse.inv.add(item1);
 		warehouse.inv.add(item2);
 		System.out.println(warehouse.inv.get(1).toString());
+		warehouse.inv.get(1).setPrice(20.0);
+		System.out.println(warehouse.inv.get(1).toString());
 		
 	}
-
 }
